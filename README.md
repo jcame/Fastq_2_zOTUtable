@@ -1,4 +1,4 @@
-# Fastq_2_zOTUtable workflow
+# Fastq_2_zOTU-table workflow
 
 This workflow contains the traditional 16S_rRNA-pipeline used in our analyses at UCPH-FOOD.
 
