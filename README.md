@@ -9,7 +9,7 @@ Before running the workflow, make sure to follow these steps:
 4) 
 
 
-
+```
 reverse_file=(*R2*.fastq)
 for file1 in *R1*.fastq
 do
@@ -202,3 +202,4 @@ elif [ "$choice" == "n" ]; then
 echo " O.K. files will be kept"
 fi
 tput sgr0
+```
