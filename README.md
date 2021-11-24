@@ -9,7 +9,7 @@ Before running the workflow, make sure to follow these steps:
 ```
 chmod 775 usearchv11***
 ```
-4) You can also download our adapted databases versions of EZTaxon, GreenGenes & RDP
+4) You can also download our adapted databases versions of EZTaxon, GreenGenes & RDP, as well as example 16S rRNA v3-region data
 ```
 www.zenobo.org
 ```
