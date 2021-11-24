@@ -9,10 +9,9 @@ Before running the workflow, make sure to follow these steps:
 ```
 chmod 775 usearchv11***
 ```
-4) You can also download our modified databases based on EZTaxon, GreenGenes & RDP
-```
+4) You can also download our adapted databases versions of EZTaxon, GreenGenes & RDP
+
 www.XXXX
-```
 
 ```
 reverse_file=(*R2*.fastq)
