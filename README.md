@@ -11,7 +11,7 @@ chmod 775 usearchv11***
 ```
 4) You can also download our adapted databases versions of EZTaxon, GreenGenes & RDP
 
-www.XXXX
+www.zenobo.org
 
 ```
 reverse_file=(*R2*.fastq)
