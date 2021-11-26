@@ -127,9 +127,10 @@ mkdir Results_${string4}/trees
 tr -d "\n" < tmp.tre | sed "-es/zOTU_/'zOTU_/g" | sed "-es/:/':/g" | sed "-es/)':/):/g" > Results_${string4}/trees/zOTU.tree 
 rm mx.txt 
 rm tmp.tre
+```
 
 13) Tidy-up a bit
-
+```
 mkdir Results_${string4}/zOTUs
 cp zotus2.fa Results_${string4}/zOTUs/zOTUs.txt
 mv zotus2.fa Results_${string4}/zOTUs/zOTUs.fa
