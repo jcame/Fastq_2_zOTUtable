@@ -9,7 +9,7 @@ To run this workflow, make sure to follow these steps:
 ```
 chmod 775 usearch***
 ```
-4) You can also download our adapted database of EZTaxon | make a directory: Databases_16s/ and place the 2 files in here
+4) You can also download our adapted database of EZTaxon | make a directory: Databases_16s/ and place the fasta file in here
 ```
 mkdir Databases_16s
 cd  Databases_16s
