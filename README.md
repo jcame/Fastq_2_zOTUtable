@@ -117,9 +117,11 @@ mv OTU_completed_EZtaxon.txt Results_${string4}/OTU-tables/
 12) Generating phylogenetic tree ##############################################################################
 ```
 mkdir Results_${string4}/trees
-./usearch -cluster_aggd zotus2.fa  -treeout tmp.tre -id 0.75 -linkage min
+./usearch -calc_distmx zotus2.fa -tabbedout mx.txt 
+./usearch -cluster_aggd  mx.txt   -treeout tmp.tre -linkage min
 tr -d "\n" < tmp.tre | sed "-es/zOTU_/'zOTU_/g" | sed "-es/:/':/g" | sed "-es/)':/):/g" > Results_${string4}/trees/zOTU.tree 
-
+rm mx.txt 
+rm tmp.tre
 
 #>>>>>>move ZOTUs
 
