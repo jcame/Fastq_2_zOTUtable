@@ -7,7 +7,7 @@ Before running the workflow, make sure to follow these steps:
 1) Make sure you have administrator rights & UNIX-like environment
 2) Download the free version of usearch (v11 is recommended) | https://www.drive5.com/usearch/download.html | make usearch executable by running: 
 ```
-chmod 775 usearchv11***
+chmod 775 usearch***
 ```
 4) You can also download our adapted database of EZTaxon | make a directory: Databases_16s/ and place the 2 files in here
 ```
