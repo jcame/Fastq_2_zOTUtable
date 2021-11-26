@@ -119,7 +119,7 @@ mv OTU_completed_EZtaxon.txt Results_${string4}/OTU-tables/
 
 ```
 
-12) Generating phylogenetic tree ##############################################################################
+12) Generating phylogenetic tree ##################
 ```
 mkdir Results_${string4}/trees
 ./usearch -calc_distmx zotus2.fa -tabbedout mx.txt 
