@@ -106,6 +106,7 @@ write.table(table, "OTU_completed_EZtaxon.txt", sep="\t", row.names = F, quote =
 chmod 755 biom.R
 ./biom.R
 rm biom.R
+rm raw_zOTU2.txt
 
 mkdir Results_${string4}
 mkdir Results_${string4}/OTU-tables
