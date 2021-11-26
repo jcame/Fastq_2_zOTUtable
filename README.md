@@ -91,11 +91,10 @@ rm qual-filt.fna
 cat sintaxEt.txt | cut -f1,4 | sed 's/d:/k__/g' | sed 's/p:/p__/g' | sed 's/c:/c__/g' | sed 's/o:/o__/g' | sed 's/f:/f__/g' | sed 's/g:/g__/g' | sed 's/s:/s__/g' | sed 's/,/;/g' > Etsintax.txt 
 
 rm sintaxEt.txt
-rm Etsintax.txt 
 TAB=$'\t'
 
 echo 'OTUID'"${TAB}"'taxonomy' > headers.txt 
-cat headers.txt Etsintax.txt  > EtsintaxR.txt ; rm  headers.txt 
+cat headers.txt Etsintax.txt  > EtsintaxR.txt ; rm  headers.txt ; rm Etsintax.txt 
 
 
 echo '#!/usr/bin/env Rscript
