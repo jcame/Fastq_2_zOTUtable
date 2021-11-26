@@ -18,13 +18,13 @@ www.zenobo.org
 www.zenobo.org
 ```
 
+6) Adjusting file labels, relabeling sequences & merging_ovelaping_pairs
+
 ```
 reverse_file=(*R2*.fastq)
 for file1 in *R1*.fastq
 do
 
-#>>>>>>>>adjusting label<<<<<<<<<<<<<<<<<<<<
-tput setaf 4
 string=${file1}
 string2=$(sed "-es/_R[0-9].*\.fastq//; s/combined_//" <<< $string)
 string3=$(sed "-es/-/_/g" <<< $string2)
@@ -34,12 +34,13 @@ string4=$(sed "-es/S_[0-9].//g" <<< $string3)
 echo ""
 echo "project name: ${string4}"
 echo ""
-tput sgr0
 
-#>>>>>>>>merging_ovelaping_pairs<<<<<<<<<<<<<<<<
 usearch10 -fastq_mergepairs ${file1} -reverse ${reverse_file[i++]} -fastqout merged-${file1}.fq -fastq_minovlen 100 -relabel ${string4}.
-#staggered reads arte removed by default in usearch10
+
 done
+```
+
+
 
 tput setaf 4
 echo ""
