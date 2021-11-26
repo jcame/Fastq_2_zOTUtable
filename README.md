@@ -12,11 +12,11 @@ chmod 775 usearch***
 4) You can also download our adapted database of EZTaxon | make a directory: Databases_16s/ and place the 2 files in here
 ```
 mkdir Databases_16s
-www.zenobo.org
+https://www.dropbox.com/s/efmib9mtr42piqd/Ez-taxon-format-sintax.fasta?dl=0
 ```
 5) You can as well download a couple of 16SrRNA v3-region examples to run in this pipeline
 ```
-www.zenobo.org
+https://www.dropbox.com/sh/vycxjuf6bcd3q1d/AABwR8Ae1rur43eEcmHXPJ0Xa?dl=0
 ```
 
 6) Adjusting file labels, relabeling sequences & merging_ovelaping_pairs
