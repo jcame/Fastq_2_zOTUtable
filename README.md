@@ -40,19 +40,12 @@ usearch10 -fastq_mergepairs ${file1} -reverse ${reverse_file[i++]} -fastqout mer
 done
 ```
 
-Merging fastq together
-
+Cleaning - moving fastq files to a storage directory
 
 ```
-
-#####################################cat merged-combined*fq > merged.fq
-echo ""
-
-#cleaning
-#####################################rm merged-combined*.fq
 mkdir ${string4}
 mv *.fastq ${string4}/
-
+```
 
 #>>>>>>>Quality check<<<<<<<<<<<<<<<<<<<<<<<<<<<
 echo ""
