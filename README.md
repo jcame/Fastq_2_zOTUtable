@@ -12,11 +12,16 @@ chmod 775 usearch***
 4) You can also download our adapted database of EZTaxon | make a directory: Databases_16s/ and place the 2 files in here
 ```
 mkdir Databases_16s
-https://www.dropbox.com/s/efmib9mtr42piqd/Ez-taxon-format-sintax.fasta?dl=0
+cd  Databases_16s
+wget https://www.dropbox.com/s/efmib9mtr42piqd/Ez-taxon-format-sintax.fasta?dl=0 ; mv Ez-taxon-format-sintax.fasta?dl=0 Ez-taxon-format-sintax.fasta
+cd ..
 ```
 5) You can as well download a couple of 16SrRNA v3-region examples to run in this pipeline
 ```
-https://www.dropbox.com/sh/vycxjuf6bcd3q1d/AABwR8Ae1rur43eEcmHXPJ0Xa?dl=0
+wget https://www.dropbox.com/s/tfg4szr1w23wma0/NXT062_IDA221_S221_R1_001.fastq?dl=0 ; mv NXT062_IDA221_S221_R1_001.fastq?dl=0 NXT062_IDA221_S221_R1_001.fastq
+wget https://www.dropbox.com/s/jl9kecl1ndnl02c/NXT062_IDA221_S221_R2_001.fastq?dl=0 ; mv NXT062_IDA221_S221_R2_001.fastq?dl=0 NXT062_IDA221_S221_R2_001.fastq
+wget https://www.dropbox.com/s/mmpa91s777vf5l4/NXT062_IDA222_S222_R1_001.fastq?dl=0 ; mv NXT062_IDA222_S222_R1_001.fastq?dl=0 NXT062_IDA222_S222_R1_001.fastq
+wget https://www.dropbox.com/s/f3o21j2qiw0sz3a/NXT062_IDA222_S222_R2_001.fastq?dl=0 ; mv NXT062_IDA222_S222_R2_001.fastq?dl=0 NXT062_IDA222_S222_R2_001.fastq
 ```
 
 6) Adjusting file labels, relabeling sequences & merging_ovelaping_pairs
