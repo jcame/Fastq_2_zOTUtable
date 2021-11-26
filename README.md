@@ -74,6 +74,7 @@ rm merged*.fq
 ./usearch -unoise3 uniques.fa -zotus zotus.fa
 sed "s/Zotu/zOTU_/g" zotus.fa > zotus2.fa 
 rm zotus.fa
+rm uniques.fa
 ```
 
 12) Building an OTU table
@@ -81,6 +82,7 @@ rm zotus.fa
 ./usearch -otutab qual-filt.fna -otus zotus2.fa -otutabout raw_zOTU.txt  -id 0.999
 cat raw_zOTU.txt | sed 's/#OTU ID/OTUID/g' > raw_zOTU2.txt 
 rm raw_zOTU.txt
+rm qual-filt.fna
 ```
 
 12) Taxonomic affiliation of zOTUs
@@ -89,6 +91,7 @@ rm raw_zOTU.txt
 cat sintaxEt.txt | cut -f1,4 | sed 's/d:/k__/g' | sed 's/p:/p__/g' | sed 's/c:/c__/g' | sed 's/o:/o__/g' | sed 's/f:/f__/g' | sed 's/g:/g__/g' | sed 's/s:/s__/g' | sed 's/,/;/g' > Etsintax.txt 
 
 rm sintaxEt.txt
+rm Etsintax.txt 
 TAB=$'\t'
 
 echo 'OTUID'"${TAB}"'taxonomy' > headers.txt 
@@ -103,6 +106,7 @@ write.table(table, "OTU_completed_EZtaxon.txt", sep="\t", row.names = F, quote =
 
 chmod 755 biom.R
 ./biom.R
+rm biom.R
 
 mkdir Results_${string4}
 mkdir Results_${string4}/OTU-tables
@@ -113,7 +117,7 @@ mv OTU_completed_EZtaxon.txt Results_${string4}/OTU-tables/
 12) Generating phylogenetic tree ##############################################################################
 ```
 mkdir Results_${string4}/trees
-./usearch -cluster_agg zotus2.fa  -treeout tmp.tre -id 0.75 -linkage min
+./usearch -cluster_aggd zotus2.fa  -treeout tmp.tre -id 0.75 -linkage min
 tr -d "\n" < tmp.tre | sed "-es/zOTU_/'zOTU_/g" | sed "-es/:/':/g" | sed "-es/)':/):/g" > Results_${string4}/trees/zOTU.tree 
 
 
@@ -125,16 +129,5 @@ mv zotus2.fa Results_${string4}/zOTUs/zOTUs.fa
 
 mkdir Results_${string4}/taxonomy
 mv EtsintaxR.txt Results_${string4}/taxonomy/sintax_EZtaxon.txt
-
-
-rm qual-filt.fna 
-rm uniques.fa
-rm sintax.txt
-rm tmp.tre
-rm biom*.R
-rm OTU_completed.txt
-rm raw_zOTU_R2.txt
-rm Etsintax*
-rm OTU_completedEt.txt
 
 ```
