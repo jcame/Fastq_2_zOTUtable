@@ -40,11 +40,11 @@ usearch10 -fastq_mergepairs ${file1} -reverse ${reverse_file[i++]} -fastqout mer
 done
 ```
 
+Merging fastq together
 
 
-tput setaf 4
-echo ""
-echo ">>>>merging fastq together<<<<"
+```
+
 #####################################cat merged-combined*fq > merged.fq
 echo ""
 
