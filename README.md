@@ -35,7 +35,7 @@ echo ""
 echo "project name: ${string4}"
 echo ""
 
-usearch10 -fastq_mergepairs ${file1} -reverse ${reverse_file[i++]} -fastqout merged-${file1}.fq -fastq_minovlen 100 -relabel ${string4}.
+usearch -fastq_mergepairs ${file1} -reverse ${reverse_file[i++]} -fastqout merged-${file1}.fq -fastq_minovlen 100 -relabel ${string4}.
 
 done
 ```
