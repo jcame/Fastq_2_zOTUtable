@@ -4,8 +4,8 @@ This workflow contains the traditional 16S_rRNA-pipeline used in our analyses at
 
 To run this workflow, make sure to follow these steps:
 
-1) Make sure you have administrator rights & UNIX-like environment
-2) Download the free version of usearch (v11 is recommended) | https://www.drive5.com/usearch/download.html | make usearch executable by running: 
+1) Make sure you have administrator rights & a UNIX-like environment terminal
+2) Download the free version of usearch (v11 is recommended) | https://www.drive5.com/usearch/download.html | make usearch is executable by running the following line: 
 ```
 chmod 775 usearch***
 ```
@@ -16,7 +16,7 @@ cd  Databases_16s
 wget https://www.dropbox.com/s/efmib9mtr42piqd/Ez-taxon-format-sintax.fasta?dl=0 ; mv Ez-taxon-format-sintax.fasta?dl=0 Ez-taxon-format-sintax.fasta
 cd ..
 ```
-5) You can as well download a couple of 16SrRNA v3-region examples to run in this pipeline
+5) Now download a couple of 16SrRNA v3-region examples to run in this pipeline
 ```
 wget https://www.dropbox.com/s/tfg4szr1w23wma0/NXT062_IDA221_S221_R1_001.fastq?dl=0 ; mv NXT062_IDA221_S221_R1_001.fastq?dl=0 NXT062_IDA221_S221_R1_001.fastq
 wget https://www.dropbox.com/s/jl9kecl1ndnl02c/NXT062_IDA221_S221_R2_001.fastq?dl=0 ; mv NXT062_IDA221_S221_R2_001.fastq?dl=0 NXT062_IDA221_S221_R2_001.fastq
@@ -24,7 +24,7 @@ wget https://www.dropbox.com/s/mmpa91s777vf5l4/NXT062_IDA222_S222_R1_001.fastq?d
 wget https://www.dropbox.com/s/f3o21j2qiw0sz3a/NXT062_IDA222_S222_R2_001.fastq?dl=0 ; mv NXT062_IDA222_S222_R2_001.fastq?dl=0 NXT062_IDA222_S222_R2_001.fastq
 ```
 
-6) Adjusting file labels, relabeling sequences & merging_ovelaping_pairs
+6) We need to adjust file labels, relabel sequences & merging_ovelaping_pairs
 
 ```
 reverse_file=(*R2*.fastq)
@@ -46,7 +46,7 @@ echo ""
 done
 ```
 
-7) Cleaning - moving fastq files to a storage directory
+7) Let move the original fastq files to a storage directory
 
 ```
 mkdir ${string4}
@@ -62,14 +62,14 @@ do
 done
 ```
 
-9) Concatenating high quality merged reads
+9) Concatenating high quality merged reads (now we can merge all reads, because we now know to what sample they belong to)
 ```
 cat merged*.fna > qual-filt.fna
 rm merged*.fna
 rm merged*.fq
 ```
 
-10) Finding unique sequences
+10) Finding unique sequences (~ full dereplication)
 ```
 ./usearch -fastx_uniques qual-filt.fna -sizeout -fastaout uniques.fa
 ```
@@ -90,7 +90,7 @@ rm raw_zOTU.txt
 rm qual-filt.fna
 ```
 
-12) Taxonomic affiliation of zOTUs
+12) Taxonomic affiliation of zOTUs 
 ```
 ./usearch -sintax zotus2.fa -db Databases_16s/Ez-taxon-format-sintax.fasta  -strand both -tabbedout sintaxEt.txt -sintax_cutoff 0.8
 cat sintaxEt.txt | cut -f1,4 | sed 's/d:/k__/g' | sed 's/p:/p__/g' | sed 's/c:/c__/g' | sed 's/o:/o__/g' | sed 's/f:/f__/g' | sed 's/g:/g__/g' | sed 's/s:/s__/g' | sed 's/,/;/g' > Etsintax.txt 
@@ -128,7 +128,7 @@ tr -d "\n" < tmp.tre | sed "-es/zOTU_/'zOTU_/g" | sed "-es/:/':/g" | sed "-es/)'
 rm mx.txt 
 rm tmp.tre
 
-#>>>>>>move ZOTUs
+13) Tidy-up a bit
 
 mkdir Results_${string4}/zOTUs
 cp zotus2.fa Results_${string4}/zOTUs/zOTUs.txt
