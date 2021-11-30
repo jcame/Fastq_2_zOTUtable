@@ -1,4 +1,4 @@
-# 16S rRNA anakysis – usearch-based zOTU-table workflow
+# 16S rRNA analysis – usearch-based zOTU-table workflow
 
 This workflow contains the traditional 16S_rRNA-pipeline used in our analyses at UCPH-FOOD.
 
@@ -129,7 +129,7 @@ rm mx.txt
 rm tmp.tre
 ```
 
-13) Tidy-up a bit
+13) Let's tidy-up a bit
 ```
 mkdir Results_${string4}/zOTUs
 cp zotus2.fa Results_${string4}/zOTUs/zOTUs.txt
